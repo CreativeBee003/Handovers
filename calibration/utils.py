@@ -57,8 +57,3 @@ def decompose_homography(H, K):
     homogenous[:3, 3] = t
 
     return homogenous.astype(np.float64)
-
-# given T_AB and T_CB, return T_AC, i.e. the rigid transformation from C to A's coordinates
-def compose_transforms_through_B(T_A_B, T_C_B):
-    T_B_C = np.linalg.inv(T_C_B)
-    return T_A_B @ T_B_C
